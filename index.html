@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Git by 2765776613</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Git</h1>
+      <h2 class="project-tagline">git基础操作的笔记</h2>
+      <a href="https://github.com/2765776613/git" class="btn">View on GitHub</a>
+      <a href="https://github.com/2765776613/git/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/2765776613/git/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h2>
+<a id="开源项目贡献流程" class="anchor" href="#%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B4%A1%E7%8C%AE%E6%B5%81%E7%A8%8B" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>开源项目贡献流程</h2>
+<ol>
+<li>
+<p>新建issue</p>
+<p>提交使用问题或者建议或者想法</p>
+</li>
+<li>
+<p>pull request</p>
+<p>步骤：</p>
+<ol>
+<li>fork项目
+2. 修改自己仓库的项目代码
+3. 新建pull request
+4. 等待作者操作审核</li>
+</ol>
+</li>
+</ol>
+<h2>
+<a id="git工作区域" class="anchor" href="#git%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%9F%9F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Git工作区域</h2>
+<ol>
+<li>工作区：添加、编辑、修改文件等动作</li>
+<li>暂存区：暂存修改的文件</li>
+<li>Git仓库：最终确定的稳定保存到仓库，成为一个新的版本，并且对他人可见</li>
+</ol>
+<pre><code>工作区--&gt;暂存区：
+    git add hello.php
+    git add test.php
+暂存区--&gt;Git仓库：
+	git commit -m "提交描述"
+</code></pre>
+<p><strong>注意：git status  :   确定文件当前所处Git工作区域</strong></p>
+<h2>
+<a id="git初始化及仓库创建和操作" class="anchor" href="#git%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E4%BB%93%E5%BA%93%E5%88%9B%E5%BB%BA%E5%92%8C%E6%93%8D%E4%BD%9C" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Git初始化及仓库创建和操作</h2>
+<h3>
+<a id="1-基本信息设置" class="anchor" href="#1-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%E8%AE%BE%E7%BD%AE" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. 基本信息设置</h3>
+<blockquote>
+<ol>
+<li>
+<p>设置用户名</p>
+<p>git config --global user.name '2765776613'</p>
+</li>
+<li>
+<p>设置用户名邮箱</p>
+<p>git config --global user.email '<a href="mailto:2765776613@qq.com">2765776613@qq.com</a>'</p>
+</li>
+<li>
+<p>查看设置</p>
+<p>git config --list</p>
+</li>
+</ol>
+</blockquote>
+<p><strong>注意</strong>：该设置在github仓库主页显示谁提交了该文件</p>
+<h3>
+<a id="2-初始化一个新的git仓库" class="anchor" href="#2-%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84git%E4%BB%93%E5%BA%93" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. 初始化一个新的Git仓库</h3>
+<ol>
+<li>
+<p>创建文件夹</p>
+<blockquote>
+<p>mkdir test</p>
+</blockquote>
+</li>
+<li>
+<p>在文件内初始化git（创建git仓库）</p>
+<blockquote>
+<p>cd test</p>
+<p>git init</p>
+</blockquote>
+</li>
+</ol>
+<h3>
+<a id="3-向仓库添加文件" class="anchor" href="#3-%E5%90%91%E4%BB%93%E5%BA%93%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. 向仓库添加文件</h3>
+<ol>
+<li>
+<p>创建一个文件</p>
+<blockquote>
+<p>touch a1.php</p>
+</blockquote>
+</li>
+<li>
+<p>添加到暂存区</p>
+<blockquote>
+<p>git add a1.php</p>
+</blockquote>
+</li>
+<li>
+<p>将文件从暂存区提交到Git仓库</p>
+<blockquote>
+<p>git commit -m 'add a1.php'</p>
+</blockquote>
+</li>
+</ol>
+<h3>
+<a id="4--修改仓库文件" class="anchor" href="#4--%E4%BF%AE%E6%94%B9%E4%BB%93%E5%BA%93%E6%96%87%E4%BB%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.  修改仓库文件</h3>
+<ol>
+<li>
+<p>修改文件</p>
+<blockquote>
+<p>vi a1.php</p>
+</blockquote>
+</li>
+<li>
+<p>添加到暂存区</p>
+<blockquote>
+<p>git add a1.php</p>
+</blockquote>
+</li>
+<li>
+<p>将文件从暂存区提交到Git仓库</p>
+<blockquote>
+<p>git commit -m '第一次通过git修改文件并提交到仓库'</p>
+</blockquote>
+</li>
+</ol>
+<h3>
+<a id="5-删除仓库文件" class="anchor" href="#5-%E5%88%A0%E9%99%A4%E4%BB%93%E5%BA%93%E6%96%87%E4%BB%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5. 删除仓库文件</h3>
+<ol>
+<li>
+<p>删除文件</p>
+<blockquote>
+<p>rm a1.php</p>
+</blockquote>
+</li>
+<li>
+<p>从git中删除文件</p>
+<blockquote>
+<p>git rm a1.php</p>
+</blockquote>
+</li>
+<li>
+<p>提交操作</p>
+<blockquote>
+<p>git commit -m '第一次通过git删除仓库文件'</p>
+</blockquote>
+</li>
+</ol>
+<h2>
+<a id="git管理远程仓库" class="anchor" href="#git%E7%AE%A1%E7%90%86%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Git管理远程仓库</h2>
+<h3>
+<a id="1-使用远程仓库的目的备份实现代码共享集中化管理" class="anchor" href="#1-%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E7%9B%AE%E7%9A%84%E5%A4%87%E4%BB%BD%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81%E5%85%B1%E4%BA%AB%E9%9B%86%E4%B8%AD%E5%8C%96%E7%AE%A1%E7%90%86" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. 使用远程仓库的目的：备份，实现代码共享集中化管理</h3>
+<h3>
+<a id="2-git克隆操作" class="anchor" href="#2-git%E5%85%8B%E9%9A%86%E6%93%8D%E4%BD%9C" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. Git克隆操作</h3>
+<ol>
+<li>
+<p>目的：将远程仓库（github对应的项目）复制到本地</p>
+</li>
+<li>
+<p>代码：</p>
+<p><code>git clone 仓库地址</code></p>
+</li>
+</ol>
+<h3>
+<a id="3-将本地仓库同步到git远程仓库中" class="anchor" href="#3-%E5%B0%86%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5%E5%88%B0git%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%B8%AD" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. 将本地仓库同步到git远程仓库中</h3>
+<p>​		<code>git push</code></p>
+<h2>
+<a id="github-pages-搭建网站" class="anchor" href="#github-pages-%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Github Pages 搭建网站</h2>
+<p><strong>个人站点：</strong></p>
+<ol>
+<li>访问：<a href="https://%E7%94%A8%E6%88%B7%E5%90%8D.github.io">https://用户名.github.io</a>
+</li>
+<li>搭建步骤：</li>
+</ol>
+<p>​	1）创建个人站点  ：  新建仓库（仓库名必须 是 【用户名.github.io】</p>
+<p>​	2）在仓库下新建index.html的文件  ：  作为网站首页</p>
+<p><strong>项目站点：</strong></p>
+<ol>
+<li>
+<p>访问：<a href="https://%E7%94%A8%E6%88%B7%E5%90%8D.github.io/%E4%BB%93%E5%BA%93%E5%90%8D">https://用户名.github.io/仓库名</a></p>
+</li>
+<li>
+<p>搭建步骤：</p>
+<p>1） 进入项目主页，点击settings</p>
+<p>2） 在settings页面，点击【Launch automatic page generator】来自动生成主体页面</p>
+<p>3） 新建站点基础信息设置</p>
+<p>4） 选择主题</p>
+<p>5） 生成网页</p>
+<p><strong>注意：可在项目主页中的branches中的gh-pages目录下更改网页结构</strong></p>
+</li>
+</ol>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/2765776613/git">Git</a> is maintained by <a href="https://github.com/2765776613">2765776613</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
